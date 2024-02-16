@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PnrController } from './pnr.controller';
-import { PnrService } from './pnr.service';
-import { Pnr } from './pnr.entity';
+import { PnrController } from './pnr-web.controller';
+import { PnrService } from './pnr-web.service';
+import { Pnr } from './pnr-web.entity';
 
 describe('Controller', () => {
   let Controller: PnrController;

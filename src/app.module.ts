@@ -1,23 +1,20 @@
 import { Module } from '@nestjs/common';
-import { PnrModule } from './pnr/pnr.module';
+import { PnrWebModule } from './pnr-web/pnr-web.module';
+import { PnrMobileModule } from './pnr-mobile/pnr-mobile.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Pnr } from './pnr/pnr.entity';
+import { Pnr } from './pnr-web/pnr-web.entity';
+import { PnrMobile } from './pnr-mobile/pnr-mobile.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      // host: 'localhost',
-      // port: 5432,
-      // username: 'adrian.brizuela',
-      // password: 'postgres',
-      // database: 'british-academy-db',
       database: 'db.sqlite',
-      // autoLoadEntities: true,
-      entities: [Pnr],
+      entities: [Pnr, PnrMobile],
       synchronize: true,
     }),
-    PnrModule,
+    PnrWebModule,
+    PnrMobileModule,
   ],
   controllers: [],
   providers: [],

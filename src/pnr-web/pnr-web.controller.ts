@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
-import { PnrService } from './pnr.service';
+import { PnrService } from './pnr-web.service';
 import { CreatePnrDto } from './dto/create-pnr.dto';
 
-@Controller('pnr')
+@Controller('pnr-web')
 export class PnrController {
   constructor(private pnrService: PnrService) {}
 

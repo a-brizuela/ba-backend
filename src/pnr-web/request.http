@@ -1,6 +1,6 @@
-# GET http://localhost:8000/pnr?lastName=Simpson
+# GET http://localhost:8000/pnr-web?lastName=Simpson
 
-POST http://localhost:8000/pnr
+POST http://localhost:8000/pnr-web
 content-type: application/json
 
 {

@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { PnrController } from './pnr.controller';
-import { PnrService } from './pnr.service';
+import { PnrController } from './pnr-web.controller';
+import { PnrService } from './pnr-web.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Pnr } from './pnr.entity';
+import { Pnr } from './pnr-web.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Pnr])],
   controllers: [PnrController],
   providers: [PnrService],
 })
-export class PnrModule {}
+export class PnrWebModule {}

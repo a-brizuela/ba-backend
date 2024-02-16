@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
 import { InjectRepository } from '@nestjs/typeorm';
-import { Pnr } from './pnr.entity';
+import { Pnr } from './pnr-web.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -38,10 +38,6 @@ export class PnrService {
   find() {
     const found = this.pnrRepository.find();
   }
-
-  // findOne(lastName: string) {
-  //   return this.pnrRepository.findOne({ travelers.lastName: lastName });
-  // }
 
   async getPnrByLastName(lastName: string): Promise<Pnr[]> {
     const queryBuilder = this.pnrRepository.createQueryBuilder('pnr');
