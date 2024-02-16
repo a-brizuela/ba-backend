@@ -8,24 +8,6 @@ export class PnrController {
 
   @Post()
   createPnr(@Body() body: CreatePnrDto) {
-    console.log(
-      body.pnr,
-      'pnr',
-      body.bookingReference,
-      'ref',
-      JSON.stringify(body.travelers),
-      "travelers",
-      JSON.stringify(body.itinerary),
-      "itinerary",
-      JSON.stringify(body.contactInformation),
-      "info",
-      JSON.stringify(body.ticketing),
-      "ticket",
-      JSON.stringify(body.travelAgency),
-      "agency",
-      JSON.stringify(body.remarks),
-      "remarks"
-    );
     this.pnrService.create(
       body.pnr,
       body.bookingReference,
@@ -37,11 +19,6 @@ export class PnrController {
       JSON.stringify(body.remarks),
     );
   }
-
-  // @Get('/:lastName')
-  // getAllPnr(@Param('travelers') lastName: string) {
-  //   return this.pnrService.find(lastName);
-  // }
 
   @Get()
   async findPnr(@Query('lastName') lastName:string) {
