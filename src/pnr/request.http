@@ -1,0 +1,90 @@
+# GET http://localhost:8000/pnr?lastName=Simpson
+
+POST http://localhost:8000/pnr
+content-type: application/json
+
+{
+	"pnr": "XSJ28R",
+	"bookingReference": "XSJ28R",
+	"travelers": [
+		{
+			"firstName": "Homer",
+			"lastName": "Simpson",
+			"passengerType": "ADT"
+		},
+		{
+			"firstName": "Marge",
+			"lastName": "Simpson",
+			"passengerType": "ADT"
+		},
+		{
+			"firstName": "Bart",
+			"lastName": "Simpson",
+			"passengerType": "CHD"
+		},
+		{
+			"firstName": "Lisa",
+			"lastName": "Simpson",
+			"passengerType": "CHD"
+		},
+		{
+			"firstName": "Maggie",
+			"lastName": "Simpson",
+			"passengerType": "INF"
+		}
+	],
+	"itinerary": [
+		{
+			"segment": {
+				"departureAirport": "SPF",
+				"arrivalAirport": "LAX",
+				"departureTime": "2023-06-15T08:00:00Z",
+				"arrivalTime": "2023-06-15T10:30:00Z",
+				"flightNumber": "SP123",
+				"airlineCode": "SP",
+				"class": "Economy"
+			}
+		},
+		{
+			"segment": {
+				"departureAirport": "LAX",
+				"arrivalAirport": "SPF",
+				"departureTime": "2023-06-22T18:00:00Z",
+				"arrivalTime": "2023-06-22T20:30:00Z",
+				"flightNumber": "SP456",
+				"airlineCode": "SP",
+				"class": "Economy"
+			}
+		}
+	],
+	"contactInformation": {
+		"email": "simpsonfamily@example.com",
+		"phone": "+1234567890"
+	},
+	"ticketing": {
+		"ticketNumbers": [
+			"012345678901",
+			"012345678902",
+			"012345678903",
+			"012345678904",
+			"012345678905"
+		],
+		"issueDate": "2023-05-01T10:00:00Z",
+		"status": "Ticketed"
+	},
+	"travelAgency": {
+		"name": "Springfield Travel",
+		"agentID": "ST1234",
+		"contact": "+1234567890"
+	},
+	"remarks": [
+		{
+			"type": "General",
+			"text": "Vegetarian meals requested for all passengers."
+		},
+		{
+			"type": "Special Assistance",
+			"text": "Stroller requested for infant."
+		}
+	]
+}
